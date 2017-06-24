@@ -1,0 +1,17 @@
+
+
+imbah di extract kaya biasa di dalam folder doe buka cmd.
+
+ulah db ngarannya doe
+
+buka cmd dalam folder doe ketik php artisan serve (jangan di close)
+
+buka cmd lagi di dalam folder doe ketik php artisan migrate:refresh --seed
+
+habis tu http://127.0.0.1:8000/
+
+admin: admin@gmail.com
+
+toko: borneo@gmail.com
+
+pass : 123456

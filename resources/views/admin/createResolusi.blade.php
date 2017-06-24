@@ -36,6 +36,25 @@
                         </span>
                     </div>
                   </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">FPS :</label>
+                    <div class="col-sm-5">
+                      <input type="text" name="fps" id="fps" class="form-control fps" value="{{old('fps')}}">
+                    </div>
+                    <div class="col-sm-5">
+                        <span class="help-block">
+                          {{$errors->first('fps')}}
+                        </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-5">
+                      <button type="submit" name="button" class="btn btn-info02">Submit</button>
+                    </div>
+                  </div>
                   </form>
                 </div>
             </div>

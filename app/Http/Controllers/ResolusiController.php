@@ -42,13 +42,16 @@ class ResolusiController extends Controller
     {
         //validasi
         $v = Validator::make($request->all(),array(
-          'resolusi' => 'required'
+          'resolusi' => 'required',
+          'fps' => 'required',
         ));
         if ($v->fails()) {
           return redirect()->action('ResolusiController@create')->withErrors()->withInput();
         }else{
           $db = new resolusi;
           $db->resolusi = $request->resolusi;
+          $db->fps = $request->fps;
+          $db->skor = $request->resolusi + $request->fps;
           if ($db->save()) {
             return redirect()->action('ResolusiController@index')->with('message','resolusi berhasil ditambahkan');
           }else{

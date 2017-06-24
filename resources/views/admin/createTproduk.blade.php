@@ -1,4 +1,4 @@
-@extends('toko.layout.tokoapp')
+@extends('admin.layout.adminapp')
 
 @section('content')
 <div class="container">
@@ -6,7 +6,7 @@
         <div class="col-md-12">
           <ol class="breadcrumb grey">
             <li><a href="#">Master</a></li>
-            <li><a href="{{action('TProdukController@admin_index')}}">Produk</a></li>
+            <li><a href="{{action('TProdukController@index')}}">Produk</a></li>
             <li class="active">Input Produk</li>
           </ol>
         </div>
@@ -36,10 +36,12 @@
               <form action="{{action('TProdukController@store')}}" method="post" class="form" id="{{'form-0'.$row->id}}">
                 {{csrf_field()}}
                 <input type="hidden" name="id_produk" value="{{$row->id}}">
+
                 <div class="form-group">
                   <input type="text" name="harga_toko" class="form-control" placeholder="masukkan harga toko">
+                  <span class="help-block"></span>
                 </div>
-                <span class="help-block"></span>
+
                 <div class="form-group">
                   <button type="submit" name="submit" class="btn btn-block btn-info03">Simpan</button>
                 </div>

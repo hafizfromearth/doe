@@ -56,6 +56,15 @@
               <li><a href="{{action('ResolusiController@index')}}">Resolusi</a></li>
             </ul>
           </li>
+
+          <!-- transaksi -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{action('RekomendasiController@create')}}">Rekomendasi</a></li>
+              <li><a href="{{action('TProdukController@admin_index')}}">Produk Toko</a></li>
+            </ul>
+          </li>
         </ul>
 
         <!-- Right Side Of Navbar -->

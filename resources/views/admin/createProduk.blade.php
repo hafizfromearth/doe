@@ -73,7 +73,7 @@
                       <select class="form-control" name="id_resolusi">
                         <option value="">Pilih Resolusi</option>
                         @foreach($resolusi as $row)
-                          <option value="{{$row->id}}">{{$row->resolusi}}</option>
+                          <option value="{{$row->id}}">{{$row->resolusi}}P/{{$row->fps}}FPS</option>
                         @endforeach
                       </select>
                     </div>

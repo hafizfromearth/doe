@@ -16,6 +16,10 @@ Route::resource('/toko', 'MTokoController');
 
 Route::resource('/resolusi','ResolusiController');
 
+Route::resource('/rekomendasi','RekomendasiController');
+
+Route::get('/produk-toko' , 'TProdukController@admin_index');
+Route::get('/produk-toko/create' , 'TProdukController@admin_create');
 // Route::get('/register-toko', 'TokoAuth\RegisterController@showRegistrationForm');
 // Route::post('/register-toko', 'TokoAuth\RegisterController@register');
 

@@ -15,7 +15,9 @@ class CreateResolusisTable extends Migration
     {
         Schema::create('resolusis', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('resolusi');//ie 1080p
+            $table->integer('resolusi');//ie 1080 P
+            $table->integer('fps');//60 FPS
+            $table->integer('skor');
             $table->timestamps();
         });
     }

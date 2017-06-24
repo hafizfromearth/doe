@@ -6,6 +6,8 @@ use App\t_produk as t_produk;
 
 use App\m_produk as m_produk;
 
+use App\toko as toko;
+
 use Illuminate\Http\Request;
 
 use DB;
@@ -26,6 +28,18 @@ class TProdukController extends Controller
         $data = t_produk::where('id_toko',$id_toko)->orderBy('created_at','desc')->paginate(25);
 
         return view('toko.indexTproduk',[
+          "no" => 1,
+          "data" => $data,
+        ]);
+    }
+
+    public function admin_index()
+    {
+        //
+        $id_toko = Auth::user()->id;
+        $data = t_produk::where('id_toko',$id_toko)->orderBy('created_at','desc')->paginate(25);
+
+        return view('admin.indexTproduk',[
           "no" => 1,
           "data" => $data,
         ]);
@@ -75,6 +89,24 @@ class TProdukController extends Controller
       }else{
         return redirect()->Action('TProdukController@create')->with('messages', 'data gagal disimpan')->withInput()->withErrors();
       }
+    }
+
+    public function admin_create()
+    {
+
+      //select * from tabel m produks
+        $id   = t_produk::all('id_produk');
+        $toko = toko::all();
+      //get id nya dan buat dalam array
+      //query not in SELECT * FROM m_produks WHERE id NOT IN (1)
+        $m_produk = DB::table('m_produks')
+                    ->whereNotIn('id',$id)
+                    ->get();
+      return view('admin.createTproduk',[
+        "no"       => 1,
+        "m_produk" => $m_produk,
+        "toko"     => $toko
+      ]);
     }
 
     /**
